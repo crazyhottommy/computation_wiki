@@ -1,0 +1,84 @@
+## Site details
+site_name: 'computation wiki'
+site_description: 'computational wiki from Ming (Tommy) Tang'
+site_author: 'Ming Tang'
+site_url: 'https://crazyhottommy.github.io/computation_wiki/'
+
+repo_name: 'crazyhottommy/computation_wiki'
+repo_url: 'https://github.com/crazyhottommy/computation_wiki'
+
+
+nav:
+    - Home: index.md
+    - computation setup:
+      - set up MacOS: setup/setup_macos.md
+
+## Copyright
+copyright: 'Copyright &copy; 2020 <a href="https://divingintogeneticsandgenomics.rbind.io/">Ming Tang</a>'
+
+## Configuration
+theme:
+  name: material
+  language: 'en'
+  palette:
+    primary: 'Blue'
+    accent: 'Blue'
+  font:
+    text: 'IBM Plex Sans'
+    code: 'Fira Code'
+#  logo: 'assets/images/logo.png'
+#  favicon: 'assets/images/logo.png'
+  feature:
+    tabs: false
+
+extra_css:
+  - 'assets/css/katex.css'
+  - 'https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css'
+
+extra_javascript:
+  - 'assets/js/katex.js'
+  - 'https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js'
+  - 'https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js'
+
+
+# Google Analytics
+google_analytics:
+  - ''
+  - 'auto'
+
+markdown_extensions:
+  - admonition
+  - fontawesome_markdown
+  - codehilite:
+      guess_lang: false
+      linenums: true
+  - toc:
+      permalink: true
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tilde
+  - meta
+  - footnotes
+  - pymdownx.emoji
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.betterem:
+      smart_enable: all
+  # - pymdownx.arithmatex:
+  #     generic: true
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: date
+  - minify:
+      minify_html: true
+
+
+
