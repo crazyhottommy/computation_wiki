@@ -12,6 +12,11 @@ nav:
     - Home: index.md
     - computation setup:
       - set up MacOS: setup/setup_macos.md
+    - working with Kraken:
+      - Run Rstudio on Kraken: kraken/kraken_rstudio.md
+    - working with google cloud:
+      - Run WES on gcp: google-cloud/wes-gcp.md
+      - Run CHIPS on gcp: google-cloud/chips-gcp.md
 
 ## Copyright
 copyright: 'Copyright &copy; 2020 <a href="https://divingintogeneticsandgenomics.rbind.io/">Ming Tang</a>'
