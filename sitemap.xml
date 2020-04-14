@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://crazyhottommy.github.io/computation_wiki/</loc>
-     <lastmod>2020-04-10</lastmod>
+     <lastmod>2020-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://crazyhottommy.github.io/computation_wiki/setup/setup_macos/</loc>
-     <lastmod>2020-04-10</lastmod>
+     <lastmod>2020-04-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://crazyhottommy.github.io/computation_wiki/kraken/kraken_rstudio/</loc>
+     <lastmod>2020-04-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://crazyhottommy.github.io/computation_wiki/google-cloud/wes-gcp/</loc>
+     <lastmod>2020-04-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://crazyhottommy.github.io/computation_wiki/google-cloud/chips-gcp/</loc>
+     <lastmod>2020-04-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
