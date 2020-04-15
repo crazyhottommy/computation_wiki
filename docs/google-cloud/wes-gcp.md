@@ -1,6 +1,7 @@
 
 # How to run WES pipeline in google cloud
 
+Thanks Len and Aashna for sharing it.
 
 ### how to get your google cloud credentials
    a. install the gcloud sdk: (it's on conda)
@@ -67,6 +68,9 @@ ssh -i [your google-cloud-engine key] [your username]@[ipaddress in 1b.]
 e.g. 
 ssh -i ~/.ssh/google_compute_engine aashna@XX.YY.ZZ.AA
 ```
+
+Please read [Connecting to Linux instances](https://cloud.google.com/compute/docs/instances/connecting-to-instance)
+and [Connecting to instances using advanced methods](https://cloud.google.com/compute/docs/instances/connecting-advanced#provide-key) for more details.
 
 ###  formatting and mounting the second drive-
 
