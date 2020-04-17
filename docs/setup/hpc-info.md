@@ -1,6 +1,8 @@
 # HPC information for Liu lab
 
-Nikos George <nikos[at]ds.dfci.harvard.edu> is the head of our Department Computing. Contact Nikos to get the Kraken (dept server) account. 
+### Kraken server
+
+Nikos George (nikos[at]ds.dfci.harvard.edu)is the head of our Department Computing. Contact Nikos to get the Kraken (dept server) account. 
 
 documentation is at http://dscomputing.dfci.harvard.edu/index.php/kraken/
 you can only access when you login the parterns' VPN (pvc.partners.org/saml).
@@ -39,4 +41,8 @@ Every lab has access to our high performance scratch space (/cluster/name-of-lab
 
 #### Local tmp storage
 Every work node has a small storage partition (approximately 100Gb) that is suitable for temp files (/tmp). This partition is not backed up and files can be deleted at any time. It is best not to use it since it is specific to the node and not shared across nodes. If your application is contained within the same node you can point TMPDIR to it.
-* Contact Annie Ng <annie@ds.dfci.harvard.edu> to connect to the Iris / Daisy (LiuLab server, cistrome.org).
+
+### Iris/Daisy server
+
+Contact Annie Ng (annie[at]ds.dfci.harvard.edu) to connect to the Iris / Daisy (LiuLab server, cistrome.org).
+
