@@ -3,7 +3,7 @@
 ## strict check
 set -euo pipefail
 
-DOCDIR="$HOME"/Dropbox (Partners HealthCare)/github_repos/computation_wiki
+DOCDIR='/Users/mtang/Dropbox (Partners HealthCare)/github_repos/computation_wiki'
 #### DANGER ####
 ## MAKE SURE TO HAVE VALID PATH HERE AS SCRIPT WILL NOT CHECK FOR PATH
 ## rsync may overwrite or worse, delete files on remote node.

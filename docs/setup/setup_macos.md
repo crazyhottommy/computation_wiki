@@ -10,6 +10,10 @@ iTerm → Preferences → Profiles → colors -> Color Presets --> Tango Dark
 
 By default, word jumps (option + → or ←) and word deletions (option + backspace) do not work. To enable these, go to "iTerm → Preferences → Profiles → Keys → Load Preset... → Natural Text Editing → Boom! Head explodes"
 
+### iterm2 tips 
+
+* press command + click the file inside the terminal to open it!
+
 ### install oh-my-zsh
 
 ```bash
