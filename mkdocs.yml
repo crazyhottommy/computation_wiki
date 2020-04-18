@@ -18,6 +18,8 @@ nav:
     - working with google cloud:
       - Run WES on gcp: google-cloud/wes-gcp.md
       - Run CHIPS on gcp: google-cloud/chips-gcp.md
+    - miscellaneous:
+      - Making figures: miscellaneous/inkscape.md
 
 ## Copyright
 copyright: 'Copyright &copy; 2020 <a href="https://divingintogeneticsandgenomics.rbind.io/">Ming Tang</a>'
