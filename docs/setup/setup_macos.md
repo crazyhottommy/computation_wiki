@@ -64,5 +64,14 @@ conda config --add channels conda-forge
 ```
 
 ### install sublime, rmate
+
 ### install R and Rstudio
+
+### install brew
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+brew install ncdu
+```
 
