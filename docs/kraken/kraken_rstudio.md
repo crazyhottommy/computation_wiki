@@ -5,20 +5,14 @@
 Also read Ming Tang's blog post https://divingintogeneticsandgenomics.rbind.io/post/run-rstudio-server-with-singularity-on-hpc/
 
 
-[`Singularity`](https://sylabs.io/docs/) is not avaiable in kraken. Install it by `conda`.
-
-```bash
-ssh kraken
-```
-
 You can not run any jobs on the login node, even conda install is not allowed.
 
 First, submit an interactive job to get a node:
 
 ```bash
+ssh kraken
 srun -t 1600 --mem=60G -c 4 --pty bash
 ```
-
 
 
 From `man srun`:
@@ -113,7 +107,7 @@ You should have a Rstudio server running!
 
 ### set up local library
 
-You will want to install libraries that the singularity container can use.
+You will want to install libraries so that the singularity container can use.
 
 If you go to your browser and inside Rstudio:
 
