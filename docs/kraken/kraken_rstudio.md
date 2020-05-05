@@ -1,10 +1,24 @@
-### How to Run Rstudio server on kraken
+# How to Run Rstudio server on kraken
+
+### install singularity and Rocker
+
+Also read Ming Tang's blog post https://divingintogeneticsandgenomics.rbind.io/post/run-rstudio-server-with-singularity-on-hpc/
+
+
+[`Singularity`](https://sylabs.io/docs/) is not avaiable in kraken. Install it by `conda`.
+
+```bash
+ssh kraken
+```
+
+You can not run any jobs on the login node, even conda install is not allowed.
 
 First, submit an interactive job to get a node:
 
 ```bash
 srun -t 1600 --mem=60G -c 4 --pty bash
 ```
+
 
 
 From `man srun`:
@@ -51,3 +65,87 @@ From `man srun`:
               default is one task per node, but note that the --cpus-per-task option will change this  default.
               This option applies to job and step allocations.}
 ```
+
+After you get a computing node, you will see the prompt becomes something like:
+
+`(base) [mtang@node03 mtang]$`.
+
+
+Note, conda `singularity` has problems to run.
+
+Ask the admin to install `singularity` on the server instead.
+Luckily, it is on `kraken` already.
+
+```bash
+module load singularity
+```
+
+pull the rocker image.  read https://www.rocker-project.org/use/singularity/
+
+```bash
+cd /liulab/mtang
+mkdir singularity_images; cd !$
+singularity pull --name rstudio.simg docker://rocker/tidyverse
+```
+
+To enable password authentication, set the PASSWORD environment variable and add the `--auth-none=0 --auth-pam-helper-path=pam-helper` options:
+
+```bash
+PASSWORD='xyz' singularity exec --bind=/liulab/mtang  rstudio.simg rserver --auth-none=0  --auth-pam-helper-path=pam-helper  --www-address=127.0.0.1
+```
+
+This will run rserver in a Singularity container. The `--www-address=127.0.0.1` option binds to localhost (the default is `0.0.0.0`, or all IP addresses on the host). listening on `127.0.0.1:8787`.
+
+From your local workstation (e.g., mac book), ssh tunneling to the compute node.
+
+on your local mac:
+
+```bash
+# check which ports are open
+sudo lsof -i -P -n | grep TCP
+ssh -t -t kraken -L 59083:localhost:59083 ssh node03 -L 59083:localhost:8787
+```
+The prompt will change to the compute node.
+
+Go to your mac local browser, open `localhost:59083`, type your HPC username and `xyz` as the password in this dummy example.
+You should have a Rstudio server running!
+
+
+### set up local library
+
+You will want to install libraries that the singularity container can use.
+
+If you go to your browser and inside Rstudio:
+
+```r
+> .libPaths()
+[1] "/usr/local/lib/R/site-library" "/usr/local/lib/R/library" 
+```
+
+You will see the library is pointing to the ones inside the container.
+
+Set up a `.Renviron` file in your HPC login node:
+
+```bash
+if [ ! -e ${HOME}/.Renviron ]
+then
+  printf '\nNOTE: creating ~/.Renviron file\n\n'
+  echo 'R_LIBS_USER=~/R/%p-library/%v' >> ${HOME}/.Renviron
+fi
+```
+
+Now, go to Rstudio in the browser ---> `Session`---> `Restart R`.
+
+```r
+> .libPaths()
+[1] "/homes6/mtang/R/x86_64-pc-linux-gnu-library/3.6" "/usr/local/lib/R/site-library"                  
+[3] "/usr/local/lib/R/library
+```
+
+You now see that `"/homes6/mtang/R/x86_64-pc-linux-gnu-library/3.6"` is my local library. If I install packages inside Rstudio,
+it will be installed there.
+
+
+
+
+
