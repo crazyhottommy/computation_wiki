@@ -97,9 +97,9 @@ on your local mac:
 ```bash
 # check which ports are open
 sudo lsof -i -P -n | grep TCP
-ssh -t -t kraken -L 59083:localhost:59083 ssh node03 -L 59083:localhost:8787
+ssh -f -L 59083:localhost:59083 ssh -L 59083:localhost:8787 -N node03
 ```
-The prompt will change to the compute node.
+
 
 Go to your mac local browser, open `localhost:59083`, type your HPC username and `xyz` as the password in this dummy example.
 You should have a Rstudio server running!
@@ -140,6 +140,10 @@ You now see that `"/homes6/mtang/R/x86_64-pc-linux-gnu-library/3.6"` is my local
 it will be installed there.
 
 
+**Note**:
+
+The `.rstudio`  in your home directory `/homes6/mtang/.rstudio/sessions/active/session-2cf8e174/suspended-session-data` can grow large. 
+Remember to clean it up (delete) it regularly.
 
 
 
