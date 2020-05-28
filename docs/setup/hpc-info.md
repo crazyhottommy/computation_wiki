@@ -46,3 +46,32 @@ Every work node has a small storage partition (approximately 100Gb) that is suit
 
 Contact Annie Ng (annie[at]ds.dfci.harvard.edu) to connect to the Iris / Daisy (LiuLab server, cistrome.org).
 
+```bash
+# if connected to VPN for local access
+ssh username@155.52.47.121 -p 33001  
+
+# if not connected to VPN
+ssh username@cistrome.org -p 33001 
+```
+
+the `/home/username` folder has a 500MB quota so do create a `/project/dev/username` folder and put your work files there.
+
+#### Hosting files in Iris
+
+Thanks Changxin for the tip.
+
+after log into `iris`:
+
+```bash
+cd /project/dev/username
+mkdir public_html
+
+## put any file you want to share inside the public_html folder
+cd public_html
+touch test.txt
+
+## soft link to your home directory
+ln -s /project/dev/username/public_html /home/username/public_html
+```
+
+The `test.txt` should be available in the web browser with address: `http://cistrome.org/~username/test.txt`
