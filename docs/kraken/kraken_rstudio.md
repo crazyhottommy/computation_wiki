@@ -97,7 +97,7 @@ on your local mac:
 ```bash
 # check which ports are open
 sudo lsof -i -P -n | grep TCP
-ssh -f -L 59083:localhost:59083 ssh -L 59083:localhost:8787 -N node03
+ssh -f -L 59083:localhost:59083 usrname@kraken.dfci.harvard.edu ssh -L 59083:localhost:8787 -N node03
 ```
 
 
