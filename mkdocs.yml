@@ -19,8 +19,8 @@ nav:
       - Run WES on gcp: google-cloud/wes-gcp.md
       - Run CHIPS on gcp: google-cloud/chips-gcp.md
       - WES ingestion on gcp: google-cloud/wes-ingestion.md
-    - ATACseq pipelines:
-      - Make bwa indicies: atac/atac-bwa-reference.md
+    - ATACseq pipeline:
+      - Make bwa indices: atac/atac-bwa-reference.md
     - miscellaneous:
       - Making figures: miscellaneous/inkscape.md
     
