@@ -1,4 +1,4 @@
-# Steps to make bwa indicies for ATACseq pipeline
+# Steps to make bwa indices for ATACseq pipeline
 
 ### Reference fasta
 
@@ -31,7 +31,7 @@ cat chr{1..22}.fa chrX.fa chrY.fa > ../../GDC_hg38_bwa/GDC_hg38_convential_chrs.
 ```
 
 
-### build bwa indicies 
+### build bwa indices 
 
 ```bash
 conda activate chips
