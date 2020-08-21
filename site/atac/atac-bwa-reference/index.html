@@ -5,7 +5,7 @@ HBV.fa
 HPV100.fa
 </code></pre></div> <p>read:</p> <ul> <li><a href=https://genestack.com/blog/2016/07/12/choosing-a-reference-genome/ >https://genestack.com/blog/2016/07/12/choosing-a-reference-genome/</a></li> <li><a href=https://lh3.github.io/2017/11/13/which-human-reference-genome-to-use>https://lh3.github.io/2017/11/13/which-human-reference-genome-to-use</a></li> </ul> <p>We will only use conventional chromosomes chr1 to chr22 and chrX, chrY.</p> <p>On <code>kraken</code>:</p> <div class=highlight><pre><span></span><code><span class=nb>cd</span> /liulab/mtang/check_files/GDC_hg38/raw_genome
 
-cat chr<span class=o>{</span><span class=m>1</span>..22<span class=o>}</span>.fa chrX.fa chrY.fa &gt; ../../GDC_hg38_bwa/GDC_hg38_convential_chrs.fa
+cat chr<span class=o>{</span><span class=m>1</span>..22<span class=o>}</span>.fa chrX.fa chrY.fa chrM.fa &gt; ../../GDC_hg38_bwa/GDC_hg38_convential_chrs.fa
 </code></pre></div> <h3 id=build-bwa-indices>build bwa indices<a class=headerlink href=#build-bwa-indices title="Permanent link">&para;</a></h3> <div class=highlight><pre><span></span><code>conda activate chips
 
 <span class=c1>## bwa Version: 0.7.15-r1140</span>

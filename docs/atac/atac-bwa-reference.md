@@ -26,7 +26,7 @@ On `kraken`:
 ```bash
 cd /liulab/mtang/check_files/GDC_hg38/raw_genome
 
-cat chr{1..22}.fa chrX.fa chrY.fa > ../../GDC_hg38_bwa/GDC_hg38_convential_chrs.fa
+cat chr{1..22}.fa chrX.fa chrY.fa chrM.fa > ../../GDC_hg38_bwa/GDC_hg38_convential_chrs.fa
 
 ```
 
