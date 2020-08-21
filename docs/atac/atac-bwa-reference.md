@@ -39,4 +39,17 @@ conda activate chips
 ## bwa Version: 0.7.15-r1140
 cd ../../GDC_hg38_bwa/
 bwa index -a bwtsw GDC_hg38_convential_chrs.fa -p GDC_hg38
+
+...
+[BWTIncConstructFromPacked] 680 iterations done. 6165927008 characters processed.
+[bwt_gen] Finished constructing BWT in 686 iterations.
+[bwa_index] 2636.03 seconds elapse.
+[bwa_index] Update BWT... 16.80 sec
+[bwa_index] Pack forward-only FASTA... 13.92 sec
+[bwa_index] Construct SA from BWT and Occ... 1256.72 sec
+[main] Version: 0.7.15-r1140
+[main] CMD: bwa index -a bwtsw -p GDC_hg38 GDC_hg38_convential_chrs.fa
+[main] Real time: 4035.590 sec; CPU: 3947.647 sec
 ```
+
+
