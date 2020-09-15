@@ -16,6 +16,7 @@ nav:
     - working with Kraken:
       - Run Rstudio on Kraken: kraken/kraken_rstudio.md
     - working with google cloud:
+      - Expand root partition: google-cloud/expand-partition.md
       - Run WES on gcp: google-cloud/wes-gcp.md
       - Run CHIPS on gcp: google-cloud/chips-gcp.md
       - WES ingestion on gcp: google-cloud/wes-ingestion.md

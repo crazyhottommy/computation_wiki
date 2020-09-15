@@ -41,15 +41,15 @@ cd ../../GDC_hg38_bwa/
 bwa index -a bwtsw GDC_hg38_convential_chrs.fa -p GDC_hg38
 
 ...
-[BWTIncConstructFromPacked] 680 iterations done. 6165927008 characters processed.
+[BWTIncConstructFromPacked] 680 iterations done. 6165952882 characters processed.
 [bwt_gen] Finished constructing BWT in 686 iterations.
-[bwa_index] 2636.03 seconds elapse.
-[bwa_index] Update BWT... 16.80 sec
-[bwa_index] Pack forward-only FASTA... 13.92 sec
-[bwa_index] Construct SA from BWT and Occ... 1256.72 sec
+[bwa_index] 2257.53 seconds elapse.
+[bwa_index] Update BWT... 13.79 sec
+[bwa_index] Pack forward-only FASTA... 10.69 sec
+[bwa_index] Construct SA from BWT and Occ... 916.76 sec
 [main] Version: 0.7.15-r1140
 [main] CMD: bwa index -a bwtsw -p GDC_hg38 GDC_hg38_convential_chrs.fa
-[main] Real time: 4035.590 sec; CPU: 3947.647 sec
+[main] Real time: 3247.124 sec; CPU: 3216.977 sec
 ```
 
 
