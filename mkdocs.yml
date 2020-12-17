@@ -15,6 +15,7 @@ nav:
       - set up HPC accounts: setup/hpc-info.md
     - working with Kraken:
       - Run Rstudio on Kraken: kraken/kraken_rstudio.md
+      - Run jupyter_notebook: kraken/kraken_jupyter.md
     - working with google cloud:
       - Expand root partition: google-cloud/expand-partition.md
       - Run WES on gcp: google-cloud/wes-gcp.md
