@@ -1,5 +1,53 @@
-# Run Juypter Notebook in a container on the remote cluster
+# Run Juypter Notebook on the remote cluster
 
+## Run Juypter Notebook on the remote cluster
+
+The note is taken from https://docs.rc.fas.harvard.edu/kb/jupyter-notebook-server-on-cluster/
+
+### start a job on the remote server
+
+require an interactive node
+
+```bash
+$ ssh kraken
+
+# time in mins
+$ srun -t 1600 --mem=20G -c 4 --pty bash
+
+# use mamba to replace conda for faster installation on kraken
+$ mamba create -n jupyter_3.6 python=3.6 jupyter  ## you can add any other package to install you might need.
+$ source activate jupyter_3.6
+
+```
+To help you connect to the Jupyter server, run the following command to get the hostname.
+Select an available port between 6818 and 11845 (in this example, 6820 is the first such available port):
+
+```bash
+$ for myport in {6818..11845}; do ! nc -z localhost ${myport} && break; done
+$ echo "ssh -NL $myport:$(hostname):$myport $USER@kraken.dfci.harvard.edu"
+# ssh -NL 6819:node21:6819 mtang@kraken.dfci.harvard.edu
+```
+
+Starting teh ntoebook server:
+
+```bash
+jupyter-notebook --no-browser --port=$myport --ip='0.0.0.0'
+
+```
+### on your local computer
+
+```bash
+ssh -NL 6819:node21:6819 mtang@kraken.dfci.harvard.edu
+```
+
+Then in your workstation/laptop browser. Make sure to copy the token from the Jupyter notebook server and update the token below.
+
+`http://localhost:6819/?token=<TokenFromYourServer>`
+
+
+
+
+## Run Juypter Notebook on the remote cluster in a container
 The note is from https://github.com/nteract/hydrogen/issues/1184
 
 I am running in a Singularity container on a remote cluster, working on node called 'node01'.
