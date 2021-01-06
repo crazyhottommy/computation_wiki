@@ -14,6 +14,7 @@ nav:
       - set up MacOS: setup/setup_macos.md
       - set up HPC accounts: setup/hpc-info.md
     - working with Kraken:
+      - mount kraken folder to local computer: kraken/kraken_sshfs.md
       - Run Rstudio on Kraken: kraken/kraken_rstudio.md
       - Run jupyter notebook: kraken/kraken_jupyter.md
     - working with google cloud:
