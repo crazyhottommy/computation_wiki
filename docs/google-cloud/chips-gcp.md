@@ -1,10 +1,11 @@
 # How to run chips on Google Cloud
-**author: Len Taing, Ming Tang, Gali Bai**
+**Author: Len Taing, Ming Tang, Aashna, Gali Bai**
+
 **Last modified: 02/03/2021**
 
 This documentation will guide you through the whole process of running chips pipeline on the google cloud platform.
 
-###Step0. Spin up an instance and use the `chips-ver1-6` as the boot disk.
+### Step0. Spin up an instance and use the `chips-ver1-6` as the boot disk.
 
 1. Log in to the [google cloud platform](https://console.cloud.google.com/): 
       - In the side bar, click `VM instanes`.
@@ -13,7 +14,7 @@ This documentation will guide you through the whole process of running chips pip
 
 3. Give your instance type an unique `Name`, e.g. chips-test-stanford. Choose `Region` as `us-east1`.
 
-4. Select `Machine type`: 'e2-standard-32'.
+4. Select `Machine type`: `e2-standard-32`.
 
 5. Boot disk: 
       - click `Change`
@@ -38,9 +39,9 @@ This documentation will guide you through the whole process of running chips pip
    - click on your new instance when it is up and copy the `External IP`
    - log in to your instance:
 
-###Step1. Log in to your instance
+### Step1. Log in to your instance
 
-**If first time logging in:**
+**a. If first time logging in:**
 
 1. Install a google cloud conda environment
 
@@ -66,10 +67,11 @@ conda activate gcloud
 gcloud compute ssh chips-test-stanford
 ```
 
-WHERE `chips-test-stanford` is the instance name.
+WHERE: `chips-test-stanford` is the instance name.
+
 NOTE: this creates `~/.ssh/google_compute_engine` and `~/.ssh/google_compute._engine.pub`
 
-**For old users:**
+**b. For old users:**
 After `~/.ssh/google_compute_engine` and `~/.ssh/google_compute._engine.pub` is created, you can use ssh to log in instead:
       
 ```bash
@@ -79,8 +81,8 @@ ssh -i ~/.ssh/google_compute_engine galib@XX.YY.ZZ.AA
 ```
 
 
-###Step2. Formatting and mounting the second drive
-1. Check the path of second drive: the additional disk you assigned when spinning up the disk
+### Step2. Formatting and mounting the second drive
+1. Check the path of second drive: the additional disk you assigned when spinning up the disk:
 
 ```bash    
 sudo lsblk
@@ -88,11 +90,14 @@ sudo lsblk
 
 Then look for the drive name, e.g. `/dev/sdb`, that corresponds to the  space that you called for.  In most cases, it's `/dev/sdb`.
 
-2. Format the second drive
-**VERY IMPORTANT**
+2. Format the second drive:
+
+**VERY IMPORTANT:**
+
 **Skip this step if using an old existing disk**
+
 you only have to format a drive IF it is newly created.  IF you are using a drive that was created from before, FORMATTING will delete everything you had from
-before. SO only do this once in the life of a disk!
+before. So only do this once in the life of a disk!
 
 
 ```bash
@@ -125,7 +130,7 @@ sudo mkdir /mnt/ssd/galib
 sudo chown galib:galib /mnt/ssd/galib
 ```
 
-NOW you can read and write files to `/mnt/ssd/aashan` without being sudo.
+NOW you can read and write files to `/mnt/ssd/galib` without being sudo.
 
 5. REDIRECT `/tmp`
 
@@ -144,14 +149,14 @@ sudo ln -s /mnt/ssd/tmp
 
 
 
-###Ste3. Chips Run
+### Step3. Chips Run
 
 ```bash
 cd mnt/ssd/galib/
 git clone git@bitbucket.org:plumbers/cidc_chips.git
 ```
 
-You can follow the Documentation on cidc_chips to set up the chips working directory.
+You can follow the documentation on cidc_chips to set up the chips working directory.
 
 ```bash
 source /home/taing/miniconda3/bin/activate chips
@@ -162,7 +167,7 @@ nohup snakemake -s cidc_chips/chips.snakefile -j 16 &
 
 ### Modify conda env
 
-You can become any other user on GCP by typing 
+You can become any other user on GCP by typing:
 
 ```bash
 $ sudo -su [username]
@@ -215,7 +220,6 @@ Ctrl + D will switch back to your own user.
 ### Creating a new image 
 
 After modifying the conda env, you might want to create a new image to save the current changes.
-Thanks Aashna for the instruction.
 
 1. STOP the instance (STOP, do not *delete*)
 
@@ -223,7 +227,7 @@ Thanks Aashna for the instruction.
 
 3. Select the root disk that you want to make an image, i.e "chips-ver1-6" which is 20GB)--click on it an it should bring you to the disk page.
 
-4. on the disk page, select "Create Image" from the top
+4. On the disk page, select "Create Image" from the top
 Here are the fields you will have to fill:
     - name: name of the image, i.e. chips-ver1-7
     - source: (do not change it) it should say "disk"
@@ -232,7 +236,7 @@ Here are the fields you will have to fill:
     - family: chips
     - description: [add a brief description of what you have added/changed]
     - click add label, then add two labels:
-        key: group value: plumbers
-        key: pipeline value: chips
+        - key: group, value: plumbers
+        - key: pipeline, value: chips
     - then click "Create" (at the bottom)
 
