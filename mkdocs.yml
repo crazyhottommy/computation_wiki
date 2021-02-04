@@ -10,23 +10,24 @@ repo_url: 'https://github.com/crazyhottommy/computation_wiki'
 
 nav:
     - Home: index.md
-    - computation setup:
+    - Computation Setup:
       - set up MacOS: setup/setup_macos.md
       - set up HPC accounts: setup/hpc-info.md
-    - working with Kraken:
+    - Working with Kraken:
       - mount kraken folder to local computer: kraken/kraken_sshfs.md
       - Run Rstudio on Kraken: kraken/kraken_rstudio.md
       - Run jupyter notebook: kraken/kraken_jupyter.md
-    - working with google cloud:
+    - Working with Google Cloud:
       - Expand root partition: google-cloud/expand-partition.md
       - Run WES on gcp: google-cloud/wes-gcp.md
-      - Run CHIPS on gcp: google-cloud/chips-gcp.md
       - WES ingestion on gcp: google-cloud/wes-ingestion.md
+      - Run CHIPS on gcp: google-cloud/chips-gcp.md
+      - Run CHIPS automator on gcp: google-cloud/chips-automator.md
     - ATACseq pipeline:
       - Make bwa indices: atac/atac-bwa-reference.md
     - miscellaneous:
       - Making figures: miscellaneous/inkscape.md
-    
+
 
 
 ## Copyright
@@ -95,6 +96,3 @@ plugins:
       type: date
   - minify:
       minify_html: true
-
-
-
