@@ -25,6 +25,8 @@ nav:
       - Run CHIPS automator on gcp: google-cloud/chips-automator.md
     - ATACseq pipeline:
       - Make bwa indices: atac/atac-bwa-reference.md
+    - RIMA RNAseq pipeline:
+      - Build RIMA references: RIMA/build-RIMA-reference.md
     - miscellaneous:
       - Making figures: miscellaneous/inkscape.md
 
