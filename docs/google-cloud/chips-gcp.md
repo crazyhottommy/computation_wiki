@@ -7,7 +7,7 @@ This documentation will guide you through the whole process of running chips pip
 
 ### Step0. Spin up an instance and use the `chips-ver1-6` as the boot disk.
 
-1. Log in to the [google cloud platform](https://console.cloud.google.com/): 
+1. Log in to the [google cloud platform](https://console.cloud.google.com/):
       - In the side bar, click `VM instanes`.
 
 2. On the top, click `Create Instance`.
@@ -16,22 +16,22 @@ This documentation will guide you through the whole process of running chips pip
 
 4. Select `Machine type`: `e2-standard-32`.
 
-5. Boot disk: 
+5. Boot disk:
       - click `Change`
       - click `Custome Images` (next to Application Images).
       - select the latest chips image: `chips-ver1-6`
-      
+
 6. Firewall:
       - Allow HTTP traffic
       - Allow HTTPs traffic
-      
+
 7. Click `Management, security, disks, networking, sole tenancy`:
       - click `Disks`
       - click `Add new disk` or `Attach existing disk`
       - If Attaching existing disk: select chips-test 200GB
       - If Add new disk: scroll down to size, and you need to try to predict
       how much space you need for your analysis, e.g. 2T = 2048.
-      
+
 8. Scroll to the bottom, click `Create`.
 
 9. NOW you will be brought back to the Google Compute Engine page:
@@ -73,10 +73,10 @@ NOTE: this creates `~/.ssh/google_compute_engine` and `~/.ssh/google_compute._en
 
 **b. For old users:**
 After `~/.ssh/google_compute_engine` and `~/.ssh/google_compute._engine.pub` is created, you can use ssh to log in instead:
-      
+
 ```bash
 ssh -i [your google-cloud-engine key] [your username]@[external IP]
-e.g. 
+e.g.
 ssh -i ~/.ssh/google_compute_engine galib@XX.YY.ZZ.AA
 ```
 
@@ -123,7 +123,7 @@ This will mount `/dev/sdb` to `/mnt/ssd`
 4. create a directory you can use on `/mnt/ssd`:
 
 ```bash
-sudo mkdir /mnt/ssd/[username] 
+sudo mkdir /mnt/ssd/[username]
 sudo chown [username]:[username] /mnt/ssd/[username]
 E.g.
 sudo mkdir /mnt/ssd/galib
@@ -163,80 +163,3 @@ source /home/taing/miniconda3/bin/activate chips
 snakemake -s cidc_chips/chips.snakefile -j 16 -np
 nohup snakemake -s cidc_chips/chips.snakefile -j 16 &
 ```
-
-
-### Modify conda env
-
-You can become any other user on GCP by typing:
-
-```bash
-$ sudo -su [username]
-```
-
-For example you can become  user `taing` and edit the conda environment like this:
-
-1. switch user
-
-```bash
-sudo -su taing
-```
-2. Source taing's miniconda environment
-
-make the following `taing_env.bash`
-
-```bash
-touch taing_env.bash
-nano taing_env.bash
-
-```
-
-Copy the following lines in taing_env.bash
-
-```bash
-export CONDA_ROOT=/home/taing/miniconda3
-export CONDA_ENVS_PATH=$CONDA_ROOT/envs
-export PATH=/home/taing/miniconda3/bin:$PATH
-unset PYTHONPATH
-export HOME=/home/taing
-```
-
-
-```bash
-source taing_env.bash 
-```
-3. Add tools
-
-E.g. You want to add fastp in current conda env:
-
-install `fastp`
-
-```bash
-conda activate chips
-conda install fastp -c bioconda
-```
-
-Ctrl + D will switch back to your own user.
-
-### Creating a new image 
-
-After modifying the conda env, you might want to create a new image to save the current changes.
-
-1. STOP the instance (STOP, do not *delete*)
-
-2. Go to Disks.
-
-3. Select the root disk that you want to make an image, i.e "chips-ver1-6" which is 20GB)--click on it an it should bring you to the disk page.
-
-4. On the disk page, select "Create Image" from the top
-Here are the fields you will have to fill:
-    - name: name of the image, i.e. chips-ver1-7
-    - source: (do not change it) it should say "disk"
-    - source disk: (do not change it)
-    - location: select regional, and then select us-east1 (south carolina)
-    - family: chips
-    - description: [add a brief description of what you have added/changed]
-    - click add label, then add two labels:
-        - key: group, value: plumbers
-        - key: pipeline, value: chips
-    - then click "Create" (at the bottom)
-
