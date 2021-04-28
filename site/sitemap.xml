@@ -1,47 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://crazyhottommy.github.io/computation_wiki/</loc>
-     <lastmod>2020-12-23</lastmod>
+     <lastmod>2021-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://crazyhottommy.github.io/computation_wiki/setup/setup_macos/</loc>
-     <lastmod>2020-12-23</lastmod>
+     <lastmod>2021-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://crazyhottommy.github.io/computation_wiki/setup/hpc-info/</loc>
-     <lastmod>2020-12-23</lastmod>
+     <lastmod>2021-04-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://crazyhottommy.github.io/computation_wiki/kraken/kraken_sshfs/</loc>
+     <lastmod>2021-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://crazyhottommy.github.io/computation_wiki/kraken/kraken_rstudio/</loc>
-     <lastmod>2020-12-23</lastmod>
+     <lastmod>2021-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://crazyhottommy.github.io/computation_wiki/kraken/kraken_jupyter/</loc>
-     <lastmod>2020-12-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://crazyhottommy.github.io/computation_wiki/google-cloud/expand-partition/</loc>
-     <lastmod>2020-12-23</lastmod>
+     <lastmod>2021-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://crazyhottommy.github.io/computation_wiki/google-cloud/wes-gcp/</loc>
-     <lastmod>2020-12-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url><url>
-     <loc>https://crazyhottommy.github.io/computation_wiki/google-cloud/chips-gcp/</loc>
-     <lastmod>2020-12-23</lastmod>
+     <lastmod>2021-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://crazyhottommy.github.io/computation_wiki/google-cloud/wes-ingestion/</loc>
-     <lastmod>2020-12-23</lastmod>
+     <lastmod>2021-04-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://crazyhottommy.github.io/computation_wiki/google-cloud/chips-gcp/</loc>
+     <lastmod>2021-04-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://crazyhottommy.github.io/computation_wiki/google-cloud/chips-automator/</loc>
+     <lastmod>2021-04-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://crazyhottommy.github.io/computation_wiki/google-cloud/tcr-gcp/</loc>
+     <lastmod>2021-04-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://crazyhottommy.github.io/computation_wiki/google-cloud/build-reference-snapshot/</loc>
+     <lastmod>2021-04-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://crazyhottommy.github.io/computation_wiki/google-cloud/build-new-image/</loc>
+     <lastmod>2021-04-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://crazyhottommy.github.io/computation_wiki/google-cloud/expand-partition/</loc>
+     <lastmod>2021-04-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://crazyhottommy.github.io/computation_wiki/google-cloud/common-questions/</loc>
+     <lastmod>2021-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://crazyhottommy.github.io/computation_wiki/atac/atac-bwa-reference/</loc>
-     <lastmod>2020-12-23</lastmod>
+     <lastmod>2021-04-22</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://crazyhottommy.github.io/computation_wiki/RIMA/build-RIMA-reference/</loc>
+     <lastmod>2021-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://crazyhottommy.github.io/computation_wiki/miscellaneous/inkscape/</loc>
-     <lastmod>2020-12-23</lastmod>
+     <lastmod>2021-04-22</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

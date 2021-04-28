@@ -3,28 +3,9 @@
 
 Thanks Len and Aashna for sharing it.
 
-### how to get your google cloud credentials
-   a. install the gcloud sdk: (it's on conda)
+### How to get your google cloud credentials
 
-   ```bash
-   conda install -c conda-forge google-cloud-sdk
-   ```
-
-   b. Authenticate:
-
-   ```bash
-   gcloud auth login
-   ```
-
-   NOTE: opens up a webbrowser, where I need to select the google account to allow access
-
-   c. set project:
-
-   ```bash
-   gcloud config set project cidc-biofx
-   ```
-
-
+Please refer to [Getting Started with Google Cloud](../google-cloud/getting-started-google-cloud.md).
 
 ###  CREATE the new instance:
 
