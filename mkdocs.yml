@@ -18,6 +18,7 @@ nav:
       - Run Rstudio on Kraken: kraken/kraken_rstudio.md
       - Run jupyter notebook: kraken/kraken_jupyter.md
     - Working with Google Cloud:
+      - Getting Started with gcp: google-cloud/getting-started-with-google-cloud.md
       - Run WES on gcp: google-cloud/wes-gcp.md
       - WES ingestion on gcp: google-cloud/wes-ingestion.md
       - Run CHIPS on gcp: google-cloud/chips-gcp.md
