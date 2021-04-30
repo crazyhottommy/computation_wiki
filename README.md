@@ -16,6 +16,17 @@ This site collects the documentations for running RIMA, CHIPS, WES and TCR-seq.
 
 4. Commit your changes, git pull and do the pull request.
 
+```bash
+
+git status
+
+git add *
+
+git commit -m "what you've done"
+
+git push origin master
+```
+
 
 
 ```bash
