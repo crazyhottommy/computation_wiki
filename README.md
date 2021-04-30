@@ -8,13 +8,13 @@ This site collects the documentations for running RIMA, CHIPS, WES and TCR
 
 1. Fork the GitHub repo:https://github.com/CIMAC-CIDC/CIDC-bioinformatics-computation-wiki
 
-2. Git clone you fork.
+2. Git clone your fork.
 
 2. Under ~/computation_wiki/docs, add markdown file in the corresponding sub-dir.
 
-3. Edit computation_wiki/mkdocs.yml to point the path to the newly added documentations.
+3. Edit ~/computation_wiki/mkdocs.yml to point the path to the newly added documentations.
 
-4. Commit your changes, git pull and do the pull request.
+4. Commit your changes, git push and do the pull request.
 
 ```bash
 

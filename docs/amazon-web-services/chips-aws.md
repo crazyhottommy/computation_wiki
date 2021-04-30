@@ -114,8 +114,7 @@ Otherwise: follow the instruction below
 
   rm sentieon_licsrv.log
 
-  ./sentieon-genomics-201808.05/bin/sentieon licsrvr --start -l
-  sentieon_licsrv.log ~/Harvard_Liu_aws_cluster.lic
+  ./sentieon-genomics-201808.05/bin/sentieon licsrvr --start -l sentieon_licsrv.log ~/Harvard_Liu_aws_cluster.lic
   ```
 
   - Try running sentieon again on your instance and you should get a success message
