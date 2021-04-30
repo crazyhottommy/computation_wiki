@@ -1,6 +1,6 @@
 ### CIDC Bioinformatics Group Pipeline documentation
 
-This site collects the documentations for running RIMA, CHIPS, WES and TCR-seq.
+This site collects the documentations for running RIMA, CHIPS, WES and TCR
 
 ![](docs/google-cloud/plots/CIMAC-CIDC-FlowChart.png)
 
