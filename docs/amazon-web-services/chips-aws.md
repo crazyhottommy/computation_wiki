@@ -8,11 +8,13 @@ This documentation will guide you through the whole process of running chips pip
 ### Step0. Before you begin
 
 1. Goto https://895602348532.signin.aws.amazon.com/console
+
 2. Use your credentials to access your account (Email Len to get access).
 
 ### Step1. Launch an AWS instance
 
 1. Make sure your region is set to `N.viginia`.
+
 2. In `Services`, select `EC2`.
 
 3. Click `instances` in the side-bar, then click `Launch instances` on the right top.
@@ -34,7 +36,7 @@ NOTE: the latest chips image is chips-ver1.6.
   - Size: `250`
   - Deletion on Termination: Both `yes`
 
-8.Click through Tags and goto Configure Security Group:
+8. Click through Tags and goto Configure Security Group:
   - `select an existing security group`
   - select `launch-wizard-1`
 
