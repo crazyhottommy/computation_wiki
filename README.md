@@ -6,7 +6,7 @@ This site collects the documentations for running RIMA, CHIPS, WES and TCR
 
 ## How to contribute
 
-1. Fork the GitHub repo:https://github.com/crazyhottommy/computation_wiki/
+1. Fork the GitHub repo:https://github.com/CIDC-bioinformatics/computation_wiki
 
 2. Git clone you fork.
 
