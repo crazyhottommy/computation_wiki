@@ -1,5 +1,22 @@
-# computation_wiki
-Tommy's computation wiki
+### CIDC Bioinformatics Group Pipeline documentation
+
+This site collects the documentations for running RIMA, CHIPS, WES and TCR-seq.
+
+![](docs/google-cloud/plots/CIMAC-CIDC-FlowChart.png)
+
+## How to contribute
+
+1. Fork the git hub repo:https://github.com/crazyhottommy/computation_wiki/
+
+2. Git clone you fork.
+
+2. Under ~/computation_wiki/docs, add markdown file in the corresponding sub-dir.
+
+3. Edit computation_wiki/mkdocs.yml to point the path to the newly added documentations.
+
+4. Commit your changes, git pull and do the pull request.
+
+
 
 ```bash
 pip install mkdocs

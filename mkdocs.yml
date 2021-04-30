@@ -26,6 +26,8 @@ nav:
       - Build Image: google-cloud/build-new-image.md
       - Expand root partition: google-cloud/expand-partition.md
       - Common Q&A: google-cloud/common-questions.md
+    - Working with Amazon Web Services:
+      - Run CHIPS on aws: amazon-web-services/chips-aws.md
     - ATACseq pipeline:
       - Make bwa indices: atac/atac-bwa-reference.md
     - RIMA RNAseq pipeline:
