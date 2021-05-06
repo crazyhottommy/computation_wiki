@@ -1,4 +1,19 @@
+
 ### CIDC Bioinformatics Group Pipeline documentation
+
+# computation_wiki
+
+This is the computation wiki for the CIDC-bioinformatics team.
+
+We document how to run WES, RNA-seq, and ATAC-seq pipelines on google cloud, and many others at this central place.
+
+All the documentations are written in plain markdown and deployed using the awesome [MkDocs](https://www.mkdocs.org/).
+The deployed website can be found at https://cimac-cidc.github.io/CIDC-bioinformatics-computation-wiki/
+
+### How to contribute
+
+Please read [Github flow](https://guides.github.com/introduction/flow/) for how a general workflow is executed.
+
 
 This site collects the documentations for running RIMA, CHIPS, WES and TCR
 
@@ -10,9 +25,9 @@ This site collects the documentations for running RIMA, CHIPS, WES and TCR
 
 2. Git clone your fork.
 
-2. Under ~/computation_wiki/docs, add markdown file in the corresponding sub-dir.
+2. Under ~/CIDC-bioinformatics-computation-wiki/docs, add markdown file in the corresponding sub-dir.
 
-3. Edit ~/computation_wiki/mkdocs.yml to point the path to the newly added documentations.
+3. Edit ~/CIDC-bioinformatics-computation-wiki/mkdocs.yml to point the path to the newly added documentations.
 
 4. Commit your changes, git push and do the pull request.
 

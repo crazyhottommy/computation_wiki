@@ -18,10 +18,12 @@ nav:
       - Run Rstudio on Kraken: kraken/kraken_rstudio.md
       - Run jupyter notebook: kraken/kraken_jupyter.md
     - Working with Google Cloud:
+      - Getting Started with gcp: google-cloud/getting-started-google-cloud.md
       - Run WES on gcp: google-cloud/wes-gcp.md
       - WES ingestion on gcp: google-cloud/wes-ingestion.md
       - Run CHIPS on gcp: google-cloud/chips-gcp.md
       - Run CHIPS automator on gcp: google-cloud/chips-automator.md
+      - Run TCR on gcp: google-cloud/tcr-gcp.md
       - Build Reference Snapshot: google-cloud/build-reference-snapshot.md
       - Build Image: google-cloud/build-new-image.md
       - Expand root partition: google-cloud/expand-partition.md
