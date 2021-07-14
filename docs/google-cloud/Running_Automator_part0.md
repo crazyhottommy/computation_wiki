@@ -15,7 +15,7 @@ To be able to use the CIDC Automators, you will need to open an instance and gen
 ### Step 1:  Open an instance.
 
 Log into the cloud
-```{bash}
+```bash
 gcloud auth application-default login
 
 # Copy and paste the link into a browser
@@ -27,7 +27,7 @@ gcloud auth application-default login
 
 Set your project (if you have not done so in the past)
 
-```{bash}
+```bash
 gcloud config set project cidc-biofx
 ```
 
@@ -38,7 +38,7 @@ CHIPS = "chips"
 RIMA = "rima"
 
 
-```{bash}
+```bash
  gcloud compute instances create {yourname}-{pipeline}-keyaddition --machine-type n2-standard-2  --image-family {imagefamilyname} --service-account biofxvm@cidc-biofx.iam.gserviceaccount.com --scopes https://www.googleapis.com/auth/devstorage.read_write,https://www.googleapis.com/auth/logging.write --zone us-east1-b
 
 ```
@@ -46,13 +46,13 @@ RIMA = "rima"
 ### Step 2: Generate a key on the instance
 
 Log into the instance
-```{bash}
+```bash
 gcloud compute ssh username@{yourname}-{pipeline}-keyaddition
 
 ```
 
 Generate ssh keys 
-```{bash}
+```bash
 ssh-keygen -f instance_ssh
 
 #hit Enter and DO NOT enter a passphrase; then Enter again
@@ -61,7 +61,7 @@ ssh-keygen -f instance_ssh
 
 ### Step 3: Add the instance ssh key to your bitbucket account
 
-```{bash}
+```bash
 cat ~/.ssh/instance_ssh.pub # on the instance
 ```
 
@@ -79,7 +79,7 @@ cat ~/.ssh/instance_ssh.pub # on the instance
 	    
   - TEST whether it worked: On the instance,try to clone the corresponding repository that you want to use: {WES,CHIPS or RIMA} 
   
-```{bash}
+```bash
 1: git clone git@bitbucket.org:plumbers/cidc_wes.git
 2: git clone git@bitbucket.org:plumbers/cidc_chips.git
 3: git clone git@bitbucket.org:plumbers/cidc_rima.git
@@ -90,7 +90,7 @@ cat ~/.ssh/instance_ssh.pub # on the instance
 ### Step 4: have your instance ssh key copied from the instance to the automator image.
 
 Stop the instance
-```{bash}
+```bash
 # on the instance
 logout
 
