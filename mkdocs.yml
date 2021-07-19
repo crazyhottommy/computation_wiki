@@ -19,6 +19,13 @@ nav:
       - Run jupyter notebook: kraken/kraken_jupyter.md
     - Working with Google Cloud:
       - Getting Started with gcp: google-cloud/getting-started-google-cloud.md
+      - Running Automators Part 0: google-cloud/Running_Automator_part0.md
+      - Running Automators Part 1: google-cloud/Running_Automator_part1.md
+      - Running Automators Part 2 ChIPs: google-cloud/Running_Automator_part2_chips.md
+      - Running Automators Part 2 RIMA: google-cloud/Running_Automator_part2_rima.md
+      - Running Automators Part 2 WES: google-cloud/Running_Automator_part2_wes.md
+      - Running Ingestion: google-cloud/Running_Ingestion.md
+      - Common Ingestion Errors: google-cloud/Ingestion_Errors.md
       - Run WES on gcp: google-cloud/wes-gcp.md
       - WES ingestion on gcp: google-cloud/wes-ingestion.md
       - Run CHIPS on gcp: google-cloud/chips-gcp.md
