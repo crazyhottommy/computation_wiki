@@ -10,7 +10,7 @@ NOTE: These steps are completed on the automator instance created in Part 1.
 
 0. Log into your automator instance:
 ```bash
-gcloud compute ssh <username>@{username}-automator-instance:~/.ssh/
+gcloud compute ssh --tunnel-through-iap <username>@{username}-automator-instance:~/.ssh/
 ```
 
 1. Clone the wes_automator repository (if you don’t have a copy already):
@@ -83,7 +83,7 @@ Parameters that are unique to each wes run, include the following:
 
         1. Log into the instance:
           ```bash
-          gcloud compute ssh  [username]@wes-auto-fast-test
+          gcloud compute ssh --tunnel-through-iap [username]@wes-auto-fast-test
           cd /mnt/ssd/wes
           ```
 
