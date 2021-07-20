@@ -18,7 +18,7 @@ After the users have completed all the prerequisites, they can proceed to the ma
 
 (ii) Login to the GCP instance that stores the results from the runs.
   ```bash
-     gcloud compute ssh [username]@[instance_name]
+     gcloud compute ssh --tunnel-through-iap [username]@[instance_name]
   ```
 
 (iii) Transfer the ingestion spreadsheet provided by Jen to the instance.      
@@ -28,10 +28,10 @@ After the users have completed all the prerequisites, they can proceed to the ma
   ```
      Next, transfer the ingestion spreadsheet from local computer to the VM instance. To do so, go to your local terminal and use the gcloud scp command as mentioned below.
   ```bash
-     gcloud compute scp [ingestion_spreadsheet.xlsx] [username]@[instance_name]:/mnt/ssd
+     gcloud compute scp --tunnel-through-iap [ingestion_spreadsheet.xlsx] [username]@[instance_name]:/mnt/ssd
   ```
      e.g.
-     gcloud compute scp CNKA2Q88X.01_template.xlsx jen@wes-auto-cnka2q88x:/mnt/ssd/
+     gcloud compute scp --tunnel-through-iap CNKA2Q88X.01_template.xlsx jen@wes-auto-cnka2q88x:/mnt/ssd/
 
 (iv) CIDC-CIMAC portal has further instructions on how to proceed ahead with ingestion. .
   ```bash

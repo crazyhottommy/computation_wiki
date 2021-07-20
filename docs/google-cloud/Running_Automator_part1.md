@@ -15,7 +15,7 @@ gcloud compute instances create {username}-automator-instance --machine-type n2-
 
 Upload your ~/.ssh/google_compute_engine key to the automator instance.
 ```bash
-gcloud compute scp ~/.ssh/google_cloud_engine <username>@{username}-automator-instance:~/.ssh/
+gcloud compute scp ~/.ssh/google_cloud_engine <username>@{username}-automator-instance:~/.ssh/ --tunnel-through-iap
 ```
 
 ## Step 2. The environment has already been added onto the automator VM image.  Activate it to check that is working:

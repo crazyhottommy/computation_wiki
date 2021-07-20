@@ -47,7 +47,7 @@ RIMA = "rima"
 
 Log into the instance
 ```bash
-gcloud compute ssh username@{yourname}-{pipeline}-keyaddition
+gcloud compute ssh --tunnel-through-iap username@{yourname}-{pipeline}-keyaddition
 
 ```
 

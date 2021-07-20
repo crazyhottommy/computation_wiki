@@ -9,7 +9,7 @@ NOTE: These steps are completed on the automator instance created in Part 1.
 
 0. Log into your automator instance:
 ```bash
-gcloud compute ssh <username>@{username}-automator-instance:~/.ssh/
+gcloud compute ssh --tunnel-through-iap <username>@{username}-automator-instance:~/.ssh/
 ```
 
 
@@ -79,7 +79,7 @@ Parameters that are unique to each rima run, include the following:
     Users need to login to the instance to check on the runs.
         1. Log into the instance:
           ```bash
-          gcloud compute ssh [username]@rima-auto-fast-test
+          gcloud compute ssh --tunnel-through-iap [username]@rima-auto-fast-test
           cd /mnt/ssd/rima
           ```
 
