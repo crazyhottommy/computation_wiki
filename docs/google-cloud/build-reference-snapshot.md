@@ -3,18 +3,18 @@
 **Last Modified: 2021-Aug-06 Aashna Jhavery and Jen Altreuter**
 
 
-This tutorial can be used when references need to be stored or updated for the CIDC pipelines in [[snapshot]](https://cloud.google.com/compute/docs/disks/create-snapshots)] on GCP.
+This tutorial can be used when references need to be stored or updated for the CIDC pipelines in [snapshot](https://cloud.google.com/compute/docs/disks/create-snapshots)] on GCP.
 After the references are created or updated on GCP console for particular pipeline, stop the instance and follow the steps mentioned below can be used to create the reference snapshot.
 Here, we have described the image particular to CHIPS as an example. Please refer to IMAGES under GCP to find the latest image for each pipeline.
 
 
 ```
 
-4. Log out the instance: hit CTRL-D and stop the instance (do not *delete*).
+1. Log out the instance: hit CTRL-D and stop the instance (do not *delete*).
 
-5. Go to `Storage` -> `Disks`.
+2. Go to `Storage` -> `Disks`.
 
-6. Select the boot disk on which you stored the reference file.
+2. Select the boot disk on which you stored the reference file.
 
 4. On the disk page, select `Create Snapshot` from the top
 Here are the fields you will have to fill:
