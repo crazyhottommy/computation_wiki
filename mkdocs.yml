@@ -27,9 +27,7 @@ nav:
       - Running Ingestion: google-cloud/Running_Ingestion.md
       - Common Ingestion Errors: google-cloud/Ingestion_Errors.md
       - Run WES on gcp: google-cloud/wes-gcp.md
-      - WES ingestion on gcp: google-cloud/wes-ingestion.md
       - Run CHIPS on gcp: google-cloud/chips-gcp.md
-      - Run CHIPS automator on gcp: google-cloud/chips-automator.md
       - Run TCR on gcp: google-cloud/tcr-gcp.md
       - Build Reference Snapshot: google-cloud/build-reference-snapshot.md
       - Build Image: google-cloud/build-new-image.md
