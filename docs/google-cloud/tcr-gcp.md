@@ -1,6 +1,6 @@
 # TCR ANALYSIS ON GCP
 
-## INITIAL SETTING UP
+## BUILDING DISK FROM SCRATCH
 
 ### VM properties recommendation:
 e2-medium (2 vCPU, 4GB memory)
@@ -103,6 +103,40 @@ tar -czvf $1_report.tar.gz $1_report
 ``` bash
 chmod u+x /tcr/automator.sh
 ```
+
+
+## RUNNING FROM PREBUILT IMAGE
+
+### VM properties recommendation:
+e2-medium (2 vCPU, 4GB memory)
+### Disk image name:
+tcr-vis-v040
+
+## EXAMPLE RUN
+
+See /tcr/test-run-cader/ in the prebuilt image for an example of a successful run.
+
+## SETTING UP METASHEET
+
+Check the metasheet section in the VisualizIRR github readme (https://github.com/d-s-cohen/visualizirr) for the generalized format.
+An example metasheet is stored in the prebuilt image at /tcr/test-run-cader/Cader_CD8_2020_meta.csv.
+It is also included below. 
+
+```
+sample,Subcohort,Timepoint|Baseline|Pre-cycle 4,BOR-RECIST,PFS,PFS index,Race,Sex,Age,Subtype,Time between Diagnosis and Collection,Time biopsy - treatment,Time treatment - diagnosis,Time between ASCT and First Dose,Healthy Donor,Baseline Group,VisGroup
+ID28_P108_baseline_CD8,A,0,Progressive Disease,0-9,1,White,Male,40-49,mixed cellularity,≥100,0-19,≥100,80-99,Non-donor,Relapsed/Refractory,P33
+ID28_P110_PreCycle4_CD8,A,1,Progressive Disease,0-9,1,White,Male,40-49,mixed cellularity,≥100,0-19,≥100,80-99,Non-donor,,P33
+ID60_P150_PreCycle4_CD8,C,1,Complete Response,10-19,1,White,Male,10-19,nodular sclerosis,0-19,20-39,20-39,0-19,Non-donor,,P47
+ID60_P149_baseline_CD8,C,0,Complete Response,10-19,1,White,Male,10-19,nodular sclerosis,0-19,20-39,20-39,0-19,Non-donor,Relapsed/Refractory,P47
+ID67_P131_PreCycle4_CD8,C,1,Partial Response,0-9,1,American Indian/Alaska Native,Male,20-29,not otherwise specified,40-59,0-19,40-59,20-39,Non-donor,,P40
+ID67_P129_baseline_CD8,C,0,Partial Response,0-9,1,American Indian/Alaska Native,Male,20-29,not otherwise specified,40-59,0-19,40-59,20-39,Non-donor,Relapsed/Refractory,P40
+```
+
+ - The first column 'sample' contains the sample names and must correspond to the names of the input repertoire files with prefix and/or suffix stripped according to the input_prefix and input_suffix values defined in /tcr/template/r/config.R. This can be further checked by comparing these to the sample names in the intracohort_data.csv file generated for the report.
+ - Further columns can be customized and represent each condition by which the cohort is split. As you can see above these include response, disease subtype, and others.
+ - Condition groups can be simply defined as strings. See the Subcohort column as an example. Groups are defined as A and C.
+ - Confition groups can also be defined numerically. See the Timepoint column as an example. Groups are definted as 0 and 1. The pipe seperator in the header defines the names to be displayed in the report corresponding to these numerical values. 0 = "Baseline" , 1 = "Pre-cycle 4". Defining groups numerically orders them, hence numerical grouping for the Timepoint condition.
+ - The VisGroup column contains patient IDs and the Timepoint column contains different timepoints. These can be utilized together to conduct paired sample analysis. Above we see two samples with the VisGroup value P33. They have two different timepoints (0 and 1) and therefore will be paired accordingly.
 
 ## RUNNING ANALYSIS
 
