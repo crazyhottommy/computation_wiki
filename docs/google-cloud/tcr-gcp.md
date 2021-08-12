@@ -148,3 +148,7 @@ cd /tcr/
 nohup ./automator.sh <cohort_name> > <cohort_name>.log &
 ```
  - Report output located at ```/tcr/<cohort_name>_report.tar.gz```
+
+## UPDATING METASHEET
+
+The metasheet is located in data/meta.csv of the report. Updating the metasheet after the report has been generated is as simple as replacing the file. If you followed the instructions above you don't need to manually place the metasheet in this location. This information is for those who wish to make changes to the metasheet later.
