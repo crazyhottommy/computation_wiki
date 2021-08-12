@@ -132,8 +132,8 @@ ID67_P129_baseline_CD8,C,0,Partial Response,0-9,1,American Indian/Alaska Native,
 
  - The first column 'sample' contains the sample names and must correspond to the names of the input repertoire files with prefix and/or suffix stripped according to the input_prefix and input_suffix values defined in /tcr/template/r/config.R. This can be further checked by comparing these to the sample names in the intracohort_data.csv file generated for the report.
  - Further columns can be customized and represent each condition by which the cohort is split. As you can see above these include response, disease subtype, and others.
- - Condition groups can be simply defined as strings. See the Subcohort column as an example. Groups are defined as A and C.
- - Confition groups can also be defined numerically. See the Timepoint column as an example. Groups are definted as 0 and 1. The pipe seperator in the header defines the names to be displayed in the report corresponding to these numerical values. 0 = "Baseline" , 1 = "Pre-cycle 4". Defining groups numerically orders them, hence numerical grouping for the Timepoint condition.
+ - Condition groups can be simply defined as strings. See the Subcohort column as an example. In this example, groups are defined as A and C.
+ - Confition groups can also be defined numerically. See the Timepoint column as an example. In this example, groups are definted as 0 and 1. The pipe seperator in the header defines the names to be displayed in the report corresponding to these numerical values. 0 = "Baseline" , 1 = "Pre-cycle 4". Defining groups numerically orders them, hence numerical grouping for the Timepoint condition.
  - The VisGroup column contains patient IDs and the Timepoint column contains different timepoints. These can be utilized together to conduct paired sample analysis. Above we see two samples with the VisGroup value P33. They have two different timepoints (0 and 1) and therefore will be paired accordingly.
 
 ## RUNNING ANALYSIS
