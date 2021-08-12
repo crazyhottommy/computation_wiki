@@ -111,7 +111,7 @@ chmod u+x /tcr/automator.sh
 e2-medium (2 vCPU, 4GB memory)
 ### Disk image name:
 tcr-vis-v040
-### EXAMPLE RUN
+### Example run:
 See /tcr/test-run-cader/ in the prebuilt image for an example of a successful run.
 
 ## SETTING UP METASHEET
