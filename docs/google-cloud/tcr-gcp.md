@@ -115,7 +115,7 @@ tcr-vis-v040
 ### Example run:
 See /tcr/test-run-cader/ in the prebuilt image for an example of a successful run.
 
-## Logging into new instance
+### Logging into new instance:
 Once your instance has been created with the tcr-vis-v040 image, log in using gcloud compute ssh
 
 ```
