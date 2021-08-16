@@ -111,8 +111,27 @@ chmod u+x /tcr/automator.sh
 e2-medium (2 vCPU, 4GB memory)
 ### Disk image name:
 tcr-vis-v040
+
 ### Example run:
 See /tcr/test-run-cader/ in the prebuilt image for an example of a successful run.
+
+## Logging into new instance
+Once your instance has been created with the tcr-vis-v040 image, log in using gcloud compute ssh
+
+```
+gcloud compute ssh --tunnel-through-iap <gcp_username>@<name_of_instance>
+
+# for example:
+gcloud compute ssh --tunnel-through-iap jen@jen-tcr-test
+```
+
+The tcr automator is located at /tcr/
+
+In order to set up new files and run automator, you will need to change the disk owner to yourself:
+
+```
+sudo chown -R <gcp_username>:<gcp_username> /tcr
+```
 
 ## SETTING UP METASHEET
 
@@ -148,6 +167,14 @@ cd /tcr/
 nohup ./automator.sh <cohort_name> > <cohort_name>.log &
 ```
  - Report output located at ```/tcr/<cohort_name>_report.tar.gz```
+
+To download the report locally, use gcloud compute scp from your local computer:
+
+```
+gcloud compute scp --tunnel-through-iap <gcp_username>:<name_of_instance>:/tcr/<cohort_name>_report.tar.gz <location_to_transfer_to>
+```
+
+To view the report, you may need to use a python command.  See documentation [here](https://github.com/CIMAC-CIDC/cidc-ngs-pipeline-api/tree/master/cidc_ngs_pipeline_api/tcr)
 
 ## UPDATING METASHEET
 
