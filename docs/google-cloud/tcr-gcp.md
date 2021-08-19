@@ -43,9 +43,10 @@ mv * template
 
 ### 2. Change values in /tcr/template/r/config.R:
  - input_format value (Likely "ADAPTIVE" or "RHTCRSEQ")
- - json_out=TRUE
  - chains_search value (Likely c("TRB") or c("TRB", "TRA"))
  - input_prefix and input_suffix
+ - db_data_dir = '/tcr/template/r/'
+ - json_out=TRUE
 
 ### 3. Install R packages as root:
 These can be installed automatically when VisualizIRR runs but it is best to install them ahead of time.
@@ -110,13 +111,13 @@ chmod u+x /tcr/automator.sh
 ### VM properties recommendation:
 e2-medium (2 vCPU, 4GB memory)
 ### Disk image name:
-tcr-vis-v040
+tcr-vis-v<latest>
 
 ### Example run:
 See /tcr/test-run-cader/ in the prebuilt image for an example of a successful run.
 
 ### Logging into new instance:
-Once your instance has been created with the tcr-vis-v040 image, log in using gcloud compute ssh
+Once your instance has been created with the tcr-vis-v<latest> image, log in using gcloud compute ssh
 
 ```
 gcloud compute ssh --tunnel-through-iap <gcp_username>@<name_of_instance>
