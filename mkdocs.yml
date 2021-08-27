@@ -18,14 +18,23 @@ nav:
       - Run Rstudio on Kraken: kraken/kraken_rstudio.md
       - Run jupyter notebook: kraken/kraken_jupyter.md
     - Working with Google Cloud:
+      - Getting Started with gcp: google-cloud/getting-started-google-cloud.md
+      - Running Automators Part 0: google-cloud/Running_Automator_part0.md
+      - Running Automators Part 1: google-cloud/Running_Automator_part1.md
+      - Running Automators Part 2 ChIPs: google-cloud/Running_Automator_part2_chips.md
+      - Running Automators Part 2 RIMA: google-cloud/Running_Automator_part2_rima.md
+      - Running Automators Part 2 WES: google-cloud/Running_Automator_part2_wes.md
+      - Running Ingestion: google-cloud/Running_Ingestion.md
+      - Common Ingestion Errors: google-cloud/Ingestion_Errors.md
       - Run WES on gcp: google-cloud/wes-gcp.md
-      - WES ingestion on gcp: google-cloud/wes-ingestion.md
       - Run CHIPS on gcp: google-cloud/chips-gcp.md
-      - Run CHIPS automator on gcp: google-cloud/chips-automator.md
+      - Run TCR on gcp: google-cloud/tcr-gcp.md
       - Build Reference Snapshot: google-cloud/build-reference-snapshot.md
       - Build Image: google-cloud/build-new-image.md
       - Expand root partition: google-cloud/expand-partition.md
       - Common Q&A: google-cloud/common-questions.md
+    - Working with Amazon Web Services:
+      - Run CHIPS on aws: amazon-web-services/chips-aws.md
     - ATACseq pipeline:
       - Make bwa indices: atac/atac-bwa-reference.md
     - RIMA RNAseq pipeline:

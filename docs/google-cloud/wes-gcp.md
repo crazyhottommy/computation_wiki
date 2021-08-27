@@ -1,10 +1,11 @@
-
 # How to run WES pipeline in google cloud
+*Authors: Ming (Tommy) Tang with input from Len Taing and Aashna Jhaveri*
+*Last updated: 2021-Aug-06, Aashna Jhaveri and Jen Altreuter*
 
-Thanks Len and Aashna for sharing it.
+### how to get your google cloud credentials 
+   (for more complete directions, please see "Getting Started with gcp")
 
-### how to get your google cloud credentials
-   a. install the gcloud sdk: (it's on conda)
+   a. install the gcloud sdk (if you have not already done so.  It's on conda):
 
    ```bash
    conda install -c conda-forge google-cloud-sdk
@@ -18,7 +19,7 @@ Thanks Len and Aashna for sharing it.
 
    NOTE: opens up a webbrowser, where I need to select the google account to allow access
 
-   c. set project:
+   c. set project (if you have not done so previously):
 
    ```bash
    gcloud config set project cidc-biofx
@@ -30,44 +31,33 @@ Thanks Len and Aashna for sharing it.
 
 a. Goto [google cloud platform](https://console.cloud.google.com/): Google Compute Engine -> click "Create Instance"
 
-1. give your instance type a unique name, e.g. `wes-aashna-1`
+1. give your instance type a unique name. Please include your name in the instance name.  e.g. `wes-aashna-1`
 
 2. Machine type: select `high-mem-64`  (this has 64 cores)
 
 3. Boot disk: click "Change".
       - click "Custome Images" (next to Application Images).
-      - select latest wes image-. AS OF 2019-02-04, it is `wes-ver-1-1b`
+      - select latest wes image-. AS OF 2021-05-08, it is `wes-ver2-25`
 
 4. Click "Management, security, disks, networking, sole tenancy".
       - click Disks
       - click "Add new disk"
       - scroll down to size, and **HERE** you need to try to predict
-      how much space you need to do your analysis e.g. 2T = 2048
+      how much space you need to do your analysis e.g. 2T = 2048 GB (binary)
 
 5. scroll to the bottom, click "Create"
 
-NOW you will be brough back to the Google Compute Engine page
+NOW you will be brought back to the Google Compute Engine page
 
-   - click on your new instance when it is up and get the IP address
-   - login to your instance:
-
-```bash
-gcloud compute ssh test-instance-1
-```
-
-WHERE `test-instance-1` is the instance name.
-
-NOTE: this creates `~/.ssh/google_compute_engine` and `~/.ssh/google_compute._engine.pub`
-
-**NOTE: You only need to do this once.
-
-after `~/.ssh/google_compute_engine` and `~/.ssh/google_compute._engine.pub` is created, you can use this ssh cmd to log in instead:
+   - to start your instance, click on your instance and choose the start button at the top of the page.
+   - login to your instance on the gcloud sdk (in your terminal window):
 
 ```bash
-ssh -i [your google-cloud-engine key] [your username]@[ipaddress in 1b.]
-e.g.
-ssh -i ~/.ssh/google_compute_engine aashna@XX.YY.ZZ.AA
+gcloud compute ssh --tunnel-through-iap wes-aashna-1
 ```
+
+WHERE `wes-aashna-1` is the instance name.
+
 
 Please read [Connecting to Linux instances](https://cloud.google.com/compute/docs/instances/connecting-to-instance)
 and [Connecting to instances using advanced methods](https://cloud.google.com/compute/docs/instances/connecting-advanced#provide-key) for more details.
@@ -138,7 +128,7 @@ sudo mkdir /mnt/ssd/aashna
 sudo chown aashna:aashna /mnt/ssd/aashna
 ```
 
-NOW you can read and write files to `/mnt/ssd/aashan` without being sudo
+NOW you can read and write files to `/mnt/ssd/aashna` without being sudo
 
 e. REDIRECT `/tmp`
 NOTE: sometimes the `/tmp` directory can get full. To ensure this doesn't happen, I usually move /tmp off of the root partition
@@ -176,7 +166,8 @@ change into your directory from 2d:
 cd /mnt/ssd/[username]
 
 # clone the wes repository:
-git clone https://AashnaJhaveri@bitbucket.org/plumbers/cidc_wes.git
+git clone git@bitbucket.org:plumbers/cidc_wes.git
+
 # create a data directory:
 mkdir data
 # upload your fastqs into data
@@ -192,7 +183,7 @@ cp cidc_wes/metasheet.csv .
 Edit the config.yaml to
 
 1. fill the sentieon path which I believe is something: `/home/taing/sentieon/sentieon.../bin`
-2. fill the  samples section- #Jingxin, ask aashna about this
+2. fill the  samples section- #ask Len or Aashna about this
 
 Edit metasheet.csv to define the Normal/Tumor pairs
 
