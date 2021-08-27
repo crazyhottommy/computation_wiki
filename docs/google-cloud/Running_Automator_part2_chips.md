@@ -16,14 +16,14 @@ gcloud compute ssh --tunnel-through-iap <username>@{username}-automator-instance
 
 1. Clone the chips_automator repository (if you don’t have a copy already):
 ``` bash
-cd chips_automator
-git clone git@bitbucket:plumbers/chips_automator
+cd ~
+git clone git@bitbucket.org:plumbers/chips_automator.git
 ```
 #Note: if you cloned the chips_automator repository previously, check if there are any updates:
 
 ``` bash
 cd chips_automator
-git pull git@bitbucket.org:plumbers/chips_automator
+git pull origin master
 ```
 
 
@@ -32,37 +32,31 @@ In your local chips_automator source code directory, you will find a file called
 For actual trial runs, config.yaml files should be generated with all of the correct parameters.  However, if this is not the case, “test.config.yaml” can be used as a template to create the actual config file for that particular case.
 
 Parameters that are unique to each chips run, include the following:
-    - instance_name:
-        define the instance name- any arbitrary string but cannot contain '.'
-    - cores:
-        define the number of cores for the instance--default is 32
-    - disk_size:
-        define the size of the attached disk
-    - google_bucket_path:
-        define the google bucket path to store the results when run is complete
-    - chips_ref_snapshot:
-        define which version of chips reference snapshot to use
-    - (optional) chips_commit:
-        define the exact chips commit version to use
-    - samples:
-        define the sample names and the google bucket paths to their fastqs/bams.
-    -  metasheet:
-        define run name and corresponding treatment and control sample names.
-
+      - instance_name: define the instance name- any arbitrary string but cannot contain '.'
+      - cores: define the number of cores for the instance--default is 32
+      - disk_size: define the size of the attached disk
+      - google_bucket_path: define the google bucket path to store the results when run is complete
+      - chips_ref_snapshot: define which version of chips reference snapshot to use
+      - (optional) chips_commit: define the exact chips commit version to use
+      - samples: define the sample names and the google bucket paths to their fastqs/bams.
+      -  metasheet: define run name and corresponding treatment and control sample names.
 
 3. Run chips automator:
     (activate the automator environment if you have not done so already)
     ```bash
+    export CONDA_ROOT=/home/aashna/miniconda3
+    export PATH=/home/aashna/miniconda3/bin:$PATH
     source activate automator
     ```
 
     run chips_automator:
     ```bash
     ./chips_automator.py -c test.config.yaml -u [your google cloud username--usually your hostname] -k ~/.ssh/google_compute_engine
-    E.g. ./chips_automator.py -c test.config.yaml -u sal26 -k ~/.ssh/google_compute_engine
+    E.g. ./chips_automator.py -c test.config.yaml -u galib -k ~/.ssh/google_compute_engine
     #chips automator should run successfully, it will print diagnostic messages  until it finishes.
     #If you encounter an error, please send the output of chips automator to Gali.
     ```
+
     NOTE: -c is where you specify the chips automator config file.
     NOTE: it may take a few minutes to finish, and you'll see lots of print outs.
     The final line should look like this-
@@ -71,6 +65,15 @@ Parameters that are unique to each chips run, include the following:
     The instance chips-auto-fast-test is running at the following IP: {IP address}
     please log into this instance and to check-in on the run
     """
+
+    NOTE: If you get an error message saying "Reauthentication required", please follow below command to Reauthenticate your credentials.
+
+    ```bash
+    gcloud auth application-default login
+    gcloud config set project cidc-biofx
+    ```
+
+
 
 ***Use the instance name, chips-auto-fast-test to check for the instance name on the GCP console for use in the next step. Note that users can change the instance name in the test.config.yaml***
 
@@ -85,8 +88,14 @@ Parameters that are unique to each chips run, include the following:
           ```bash
           top
           ```
-          - wait until the first item is 'dockerd' or 'containerd' or 'top'
-          - if you see these, then you know the run is done
+            - wait until the first item is 'dockerd' or 'containerd' or 'top'
+            - if you see these, then you know the run is done
+        3. check nohup.out:
+          ```bash
+          tail nohup.out
+          ll analysis/report
+          ```
+            - If you see the run is 101% complete and there is a report.zip file under analysis/report, you know the run is completed.
 
 
 ###Note: If you are running chips_automator with actual clinical trial data, then transfer the version info using the transfer script provided in the VM image to the google bucket. Also, follow the ingestion documentation before proceeding to the below section.
