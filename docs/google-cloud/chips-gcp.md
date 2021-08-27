@@ -1,42 +1,39 @@
 # How to run chips on Google Cloud
 **Author: Len Taing, Ming Tang, Aashna, Gali Bai**
-
-**Last modified: 02/03/2021**
+**Last modified: 2021-Aug-06 Aashna Jhaveri, Jennifer Altreuter**
 
 This documentation will guide you through the whole process of running chips pipeline on the google cloud platform.
 
-### Step0. Spin up an instance and use the `chips-ver1-6` as the boot disk.
+### Step0. Spin up an instance and use the `chips-ver1-8` as the boot disk. (Please check with the person in charge of the ChIPs pipeline to make sure this is the latest version.)
 
 1. Log in to the [google cloud platform](https://console.cloud.google.com/):
       - In the side bar, click `VM instanes`.
 
 2. On the top, click `Create Instance`.
 
-3. Give your instance type an unique `Name`, e.g. chips-test-stanford. Choose `Region` as `us-east1`.
+3. Give your instance type an unique `Name`.  Please include your name in the instance name. e.g. chips-test-aashna. 
 
-4. Select `Machine type`: `e2-standard-32`.
+4. Choose `Region` as `us-east1`.
 
-5. Boot disk:
+5. Select `Machine type`: `e2-standard-32`.
+
+6. Boot disk:
       - click `Change`
       - click `Custome Images` (next to Application Images).
-      - select the latest chips image: `chips-ver1-6`
-
-6. Firewall:
-      - Allow HTTP traffic
-      - Allow HTTPs traffic
+      - select the latest chips image: `chips-ver1-8`
 
 7. Click `Management, security, disks, networking, sole tenancy`:
       - click `Disks`
       - click `Add new disk` or `Attach existing disk`
       - If Attaching existing disk: select chips-test 200GB
       - If Add new disk: scroll down to size, and you need to try to predict
-      how much space you need for your analysis, e.g. 2T = 2048.
+      how much space you need for your analysis, e.g. 2T = 2048 GB (binary).
 
 8. Scroll to the bottom, click `Create`.
 
 9. NOW you will be brought back to the Google Compute Engine page:
 
-   - click on your new instance when it is up and copy the `External IP`
+   - to start your instance, click on your new instance name and choose start/resume instance at the top of the page 
    - log in to your instance:
 
 ### Step1. Log in to your instance
@@ -60,25 +57,14 @@ conda install mamba -c conda-forge
 mamba create -n gcloud -c conda-forge google-cloud-sdk
 
 ```
-
+**b. Log in for both first time and old users:**
 
 ```bash
 conda activate gcloud
-gcloud compute ssh chips-test-stanford
+gcloud compute ssh --tunnel-through-iap chips-test-aashna
 ```
 
-WHERE: `chips-test-stanford` is the instance name.
-
-NOTE: this creates `~/.ssh/google_compute_engine` and `~/.ssh/google_compute._engine.pub`
-
-**b. For old users:**
-After `~/.ssh/google_compute_engine` and `~/.ssh/google_compute._engine.pub` is created, you can use ssh to log in instead:
-
-```bash
-ssh -i [your google-cloud-engine key] [your username]@[external IP]
-e.g.
-ssh -i ~/.ssh/google_compute_engine galib@XX.YY.ZZ.AA
-```
+WHERE: `chips-test-aashna` is the instance name.
 
 
 ### Step2. Formatting and mounting the second drive

@@ -1,4 +1,6 @@
-###Frequently Asked Questions
+### Frequently Asked Questions
+
+**Last Updated: 2021-Aug-05 Aashna Jhaveri**
 
 #### Q1. How to update conda environment under /home/taing/miniconda?
 
@@ -83,3 +85,6 @@ chmod 777 /home/taing/sentieon
 ```
 
 4. Create a new image for the current updated instance.
+
+#### Q4: Unable to resolve host error message  
+Please follow the steps mentioned in 'Common ingestion errors' document.
