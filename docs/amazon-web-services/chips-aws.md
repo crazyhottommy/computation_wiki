@@ -1,4 +1,4 @@
-# How to run chips on Google Cloud
+# How to run chips on Amazon Web Services
 **Author: Len Taing, Gali Bai**
 
 **Last modified: 04/30/2021**
